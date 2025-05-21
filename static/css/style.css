@@ -1,0 +1,10 @@
+
+svg {
+    width: 150px;
+    height: 200px;
+}
+
+.water {
+    fill: #00bcd4;
+    transition: all 0.5s ease;
+}
