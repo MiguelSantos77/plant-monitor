@@ -8,3 +8,7 @@ svg {
     fill: #00bcd4;
     transition: all 0.5s ease;
 }
+
+#waterPlantBtn{
+    display: none;
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Plant Monitor Settings</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+        <a class="navbar-brand" href="/"> Plant Monitor</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary" href="#">⚙️ Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+  <div class="card mt-3 p-3">
+    <h5 class="card-title">MQTT Broker</h5>
+    <div class="mb-3">
+      <label>IP</label>
+      <input id="broker_ip" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Port</label>
+      <input id="broker_port" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="card mt-3 p-3">
+    <h5 class="card-title">Humidity Sensor Calibration</h5>
+    <div class="row">
+        <small>This value will be used for calculation</small>
+        <div class="col-md-6">
+          <label>Minimum Sensor Value (Wet)</label>
+          <input id="min_sensor" type="number" class="form-control" placeholder="Ex: 280">
+        </div>
+        <div class="col-md-6">
+          <label>Maximum Sensor Value (Dry)</label>
+          <input id="max_sensor" type="number" class="form-control" placeholder="Ex: 655">
+        </div>
+    </div>
+  </div>
+
+  <div class="card mt-4 p-3">
+    <h5 class="card-title">Watering Mode</h5>
+    <select id="mode" class="form-select">
+      <option value="manual">Manual</option>
+      <option value="auto">Automatic (specific)</option>
+      <option value="schedule">Scheduled</option>
+    </select>
+
+    <div id="modeInputs" class="mt-3"></div>
+  </div>
+    <div id="alert-placeholder"></div>
+
+  <button class="btn btn-success mt-4" onclick="saveSettings()">Save</button>
+
+  <div>
+
+  </div>
+</div>  
+    <script src="static/js/settings.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

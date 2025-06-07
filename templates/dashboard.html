@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css">
     <title>Plant Monitor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-        <a class="navbar-brand" href="/">🌱 Plant Monitor</a>
+        <a class="navbar-brand" href="/">Plant Monitor</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -21,20 +23,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">
-                    <a class="btn btn-outline-secondary" href="#">⚙️ Settings</a>
+                    <a class="btn btn-outline-secondary" href="/settings">⚙️ Settings</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-     <div class="card mt-4">
-        <div class="card-body">
-            <h5 class="card-title">📍 ESP infos</h5>
-            <p>🌡️ Humidity: <span id="humidity">--</span>%</p>
-            <p>💧 Last Watering: <span id="lastWatering">--</span></p>
-        </div>
+      <div class="card mt-4">
+        <div class="card-body" style="display: flex;justify-content:center; text-align: center;">
+            <div>
+                <h5 class="card-title">ESP Information</h5>
+            
+                <p>Last Watering: <span id="lastWateringTime">--</span></p>
+                <p>Tank Status: <span id="tankStatus">--</span></p>
 
-         <svg viewBox="0 0 100 150">
+                <svg viewBox="0 0 100 150">
             <path d="M50 145 C70 145, 85 120, 80 90 C75 60, 50 30, 50 0 C50 30, 25 60, 20 90 C15 120, 30 145, 50 145 Z" 
                 fill="#e0f7fa" stroke="#00acc1" stroke-width="2"/>
             
@@ -43,9 +46,25 @@
             </clipPath>
 
             <rect id="waterLevel" class="water" x="0" y="150" width="100" height="0" clip-path="url(#clipWaterDrop)" />
+            
         </svg>
+        <p>Humidity: <span id="humidity">--</span>%</p>
+            </div>
+            
+        </div>
+
+        <button id="waterPlantBtn" class="btn btn-success mt-4" onclick="waterPlant()">Water Plant</button>
+        
+        
+        <div class="card mt-4">
+    <div class="card-body">
+        <h5 class="card-title">📈 Humidity History</h5>
+        <canvas id="humidityChart" height="100"></canvas>
+    </div>
+    </div>
+
     </div>
     <script src="static/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
